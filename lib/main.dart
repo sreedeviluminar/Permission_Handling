@@ -95,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
   void requestCameraPermission() async {
     /// status can either be: granted, denied, restricted or permanentlyDenied
     var status = await Permission.camera.status;
@@ -121,8 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
     Map<Permission, PermissionStatus> statuses = await [
       Permission.location,
       Permission.storage,
+      Permission.phone,
     ].request();
-    print("location permission: ${statuses[Permission.location]}, "
+    print("location permission: ${statuses[Permission.location]},"
         "storage permission: ${statuses[Permission.storage]}");
   }
 
